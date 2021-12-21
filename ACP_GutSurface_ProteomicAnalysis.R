@@ -12,7 +12,7 @@ ACP_proteomics_MCOT_TSC <- read_csv("path_to_csv_file")
 
 ### select unique peptides (unipep >=2) and total spectral count (TSC >=2) from adults and nymphs, removing decoys, joining files
 ACP_adult_proteomics_MCOT_unipep2_TSC2 <- ACP_proteomics_MCOT_UniPep %>%
-  select(dIentified_Proteins:BBMV_Adult3)%>%
+  select(Identified_Proteins:BBMV_Adult3)%>%
   filter(BBMV_Adult1 >=2 |  BBMV_Adult2 >=2 |  BBMV_Adult3 >=2)%>%
   filter(!str_detect(Identified_Proteins,"DECOY"))%>%
   select(Accession_Number)%>%
